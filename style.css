@@ -1,0 +1,529 @@
+/* ============================================================
+   IBM Carbon Design System 風スタイル
+   カラートークン・タイポグラフィ・レイアウト
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   CSS変数（Carbon Design Tokens）
+   ------------------------------------------------------------ */
+:root {
+  /* Interactive */
+  --color-interactive:        #0f62fe;
+  --color-interactive-hover:  #0353e9;
+  --color-interactive-active: #002d9c;
+
+  /* Background */
+  --color-bg:                 #ffffff;
+  --color-bg-subtle:          #f4f4f4;
+  --color-bg-hover:           #e8e8e8;
+
+  /* Border */
+  --color-border:             #e0e0e0;
+  --color-border-strong:      #8d8d8d;
+  --color-header-border:      #393939;
+
+  /* Text */
+  --color-text-primary:       #161616;
+  --color-text-secondary:     #525252;
+  --color-text-placeholder:   #a8a8a8;
+  --color-text-on-color:      #ffffff;
+  --color-text-link:          #0f62fe;
+
+  /* Layer */
+  --color-layer-01:           #f4f4f4;
+  --color-layer-02:           #ffffff;
+
+  /* Header */
+  --color-header-bg:          #161616;
+  --color-header-text:        #ffffff;
+
+  /* Tag */
+  --color-tag-bg:             #dde1ff;
+  --color-tag-text:           #001d6c;
+
+  /* Spacing (Carbon 8px grid) */
+  --spacing-01: 2px;
+  --spacing-02: 4px;
+  --spacing-03: 8px;
+  --spacing-04: 12px;
+  --spacing-05: 16px;
+  --spacing-06: 24px;
+  --spacing-07: 32px;
+  --spacing-08: 40px;
+  --spacing-09: 48px;
+  --spacing-10: 64px;
+
+  /* Typography */
+  --font-family: 'IBM Plex Sans JP', 'IBM Plex Sans', -apple-system, 'Segoe UI', sans-serif;
+  --font-size-xs:   12px;
+  --font-size-sm:   14px;
+  --font-size-base: 16px;
+  --font-size-lg:   18px;
+  --font-size-xl:   20px;
+  --font-size-2xl:  24px;
+  --font-size-3xl:  28px;
+  --line-height:    1.6;
+
+  /* Misc */
+  --container-max-width: 1200px;
+  --border-radius: 0px;
+  --transition: 110ms cubic-bezier(0.2, 0, 0.38, 0.9);
+}
+
+/* ------------------------------------------------------------
+   リセット・ベーススタイル
+   ------------------------------------------------------------ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: var(--font-size-base);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+ul {
+  padding-left: var(--spacing-06);
+}
+
+li {
+  margin-bottom: var(--spacing-02);
+}
+
+p + p {
+  margin-top: var(--spacing-04);
+}
+
+code {
+  font-family: 'IBM Plex Mono', 'Courier New', monospace;
+  font-size: 0.875em;
+  background-color: var(--color-bg-subtle);
+  padding: 1px var(--spacing-02);
+  border: 1px solid var(--color-border);
+}
+
+/* ------------------------------------------------------------
+   コンテナ
+   ------------------------------------------------------------ */
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-06);
+}
+
+/* ------------------------------------------------------------
+   サイトヘッダー
+   ------------------------------------------------------------ */
+.site-header {
+  background: linear-gradient(to right, #0f62fe, #a56eff);
+  border-bottom: 1px solid var(--color-header-border);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-06);
+  padding: var(--spacing-07) 0;
+}
+
+.site-header__logo-link {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+}
+
+.site-header__logo {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
+.site-header__title-area {
+  flex: 1;
+}
+
+.theme-toggle {
+  margin-left: auto;
+  flex-shrink: 0;
+  height: 32px;
+  padding: 0 var(--spacing-04);
+  font-family: var(--font-family);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--color-header-text);
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color var(--transition), border-color var(--transition);
+}
+
+.theme-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.theme-toggle:focus {
+  outline: 2px solid #ffffff;
+  outline-offset: -2px;
+}
+
+.site-header__eyebrow {
+  display: block;
+  font-size: var(--font-size-xs);
+  font-weight: 400;
+  color: #c6c6c6;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: var(--spacing-02);
+}
+
+.site-header__title {
+  font-size: var(--font-size-3xl);
+  font-weight: 600;
+  color: var(--color-header-text);
+  letter-spacing: -0.01em;
+}
+
+/* ------------------------------------------------------------
+   メインコンテンツ
+   ------------------------------------------------------------ */
+.main-content {
+  background-color: var(--color-bg);
+  padding: var(--spacing-08) 0 var(--spacing-10);
+}
+
+/* ------------------------------------------------------------
+   検索バー
+   ------------------------------------------------------------ */
+.search-section {
+  margin-bottom: var(--spacing-07);
+}
+
+.search-label {
+  display: block;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-03);
+}
+
+.search-input-wrapper {
+  position: relative;
+  max-width: 640px;
+}
+
+.search-icon {
+  position: absolute;
+  left: var(--spacing-04);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-secondary);
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+.search-input {
+  display: block;
+  width: 100%;
+  height: 48px;
+  padding: 0 var(--spacing-05) 0 44px;
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  color: var(--color-text-primary);
+  background-color: var(--color-layer-01);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--border-radius);
+  outline: none;
+  transition: border-color var(--transition), outline var(--transition);
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.search-input::placeholder {
+  color: var(--color-text-placeholder);
+}
+
+.search-input:focus {
+  border-color: var(--color-interactive);
+  outline: 2px solid var(--color-interactive);
+  outline-offset: -2px;
+}
+
+.search-input::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* ------------------------------------------------------------
+   カテゴリフィルタ
+   ------------------------------------------------------------ */
+.filter-section {
+  margin-bottom: var(--spacing-07);
+}
+
+.filter-label {
+  display: block;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-03);
+}
+
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-02);
+}
+
+.filter-btn {
+  display: inline-flex;
+  align-items: center;
+  height: 32px;
+  padding: 0 var(--spacing-04);
+  font-family: var(--font-family);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--color-text-primary);
+  background-color: transparent;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color var(--transition), color var(--transition), border-color var(--transition);
+}
+
+.filter-btn:hover {
+  background-color: var(--color-bg-hover);
+}
+
+.filter-btn:focus {
+  outline: 2px solid var(--color-interactive);
+  outline-offset: -2px;
+}
+
+.filter-btn--active {
+  background-color: var(--color-interactive);
+  border-color: var(--color-interactive);
+  color: var(--color-text-on-color);
+}
+
+.filter-btn--active:hover {
+  background-color: var(--color-interactive-hover);
+  border-color: var(--color-interactive-hover);
+}
+
+/* ------------------------------------------------------------
+   FAQセクション
+   ------------------------------------------------------------ */
+.faq-section {
+  border-top: 1px solid var(--color-border);
+}
+
+/* ------------------------------------------------------------
+   FAQ アイテム（アコーディオン）
+   ------------------------------------------------------------ */
+.faq-item {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.faq-question {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-04);
+  width: 100%;
+  padding: var(--spacing-06) 0;
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  font-weight: 400;
+  color: var(--color-text-primary);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color var(--transition);
+}
+
+.faq-question:hover {
+  background-color: var(--color-bg-hover);
+}
+
+.faq-question:focus {
+  outline: 2px solid var(--color-interactive);
+  outline-offset: -2px;
+}
+
+.faq-category-tag {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  height: 20px;
+  padding: 0 var(--spacing-03);
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+  color: var(--color-tag-text);
+  background-color: var(--color-tag-bg);
+  white-space: nowrap;
+}
+
+.faq-question-text {
+  flex: 1;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.faq-chevron {
+  flex-shrink: 0;
+  color: var(--color-text-secondary);
+  transition: transform var(--transition);
+  margin-left: auto;
+}
+
+.faq-question[aria-expanded="true"] .faq-chevron {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  padding: 0 0 var(--spacing-06) 0;
+  padding-left: calc(var(--spacing-04) * 2 + 56px);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height);
+  overflow: hidden;
+}
+
+.faq-answer[hidden] {
+  display: none;
+}
+
+.faq-answer p,
+.faq-answer ul {
+  margin-bottom: var(--spacing-04);
+}
+
+.faq-answer p:last-child,
+.faq-answer ul:last-child {
+  margin-bottom: 0;
+}
+
+.faq-answer strong {
+  color: var(--color-text-primary);
+  font-weight: 600;
+}
+
+/* ------------------------------------------------------------
+   空状態メッセージ
+   ------------------------------------------------------------ */
+.faq-empty {
+  padding: var(--spacing-10) 0;
+  text-align: center;
+  color: var(--color-text-secondary);
+  border-top: 1px solid var(--color-border);
+}
+
+.faq-empty[hidden] {
+  display: none;
+}
+
+.faq-empty p:not(.faq-empty__sub) {
+  font-size: var(--font-size-lg);
+  font-weight: 500;
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-03);
+}
+
+.faq-empty__sub {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  font-weight: 400;
+}
+
+/* ------------------------------------------------------------
+   サイトフッター
+   ------------------------------------------------------------ */
+.site-footer {
+  background-color: var(--color-header-bg);
+  border-top: 1px solid var(--color-header-border);
+  padding: var(--spacing-06) 0;
+}
+
+.site-footer p {
+  font-size: var(--font-size-sm);
+  color: #c6c6c6;
+}
+
+/* ------------------------------------------------------------
+   ダークテーマ
+   ------------------------------------------------------------ */
+body.dark-theme {
+  --color-bg:                 #161616;
+  --color-bg-subtle:          #262626;
+  --color-bg-hover:           #353535;
+  --color-border:             #393939;
+  --color-border-strong:      #6f6f6f;
+  --color-text-primary:       #f4f4f4;
+  --color-text-secondary:     #c6c6c6;
+  --color-text-placeholder:   #6f6f6f;
+  --color-layer-01:           #262626;
+  --color-layer-02:           #393939;
+}
+
+/* ------------------------------------------------------------
+   レスポンシブ対応
+   ------------------------------------------------------------ */
+@media (max-width: 768px) {
+  .site-header__title {
+    font-size: var(--font-size-2xl);
+  }
+
+  .site-header__inner {
+    padding: var(--spacing-06) 0;
+    gap: var(--spacing-04);
+  }
+
+  .site-header__logo {
+    height: 32px;
+  }
+
+  .main-content {
+    padding: var(--spacing-06) 0 var(--spacing-08);
+  }
+
+  .container {
+    padding: 0 var(--spacing-05);
+  }
+
+  .filter-btn {
+    font-size: var(--font-size-xs);
+    height: 28px;
+    padding: 0 var(--spacing-03);
+  }
+
+  .faq-question {
+    gap: var(--spacing-03);
+    padding: var(--spacing-05) 0;
+  }
+
+  .faq-category-tag {
+    display: none;
+  }
+
+  .faq-answer {
+    padding-left: 0;
+    font-size: var(--font-size-sm);
+  }
+}

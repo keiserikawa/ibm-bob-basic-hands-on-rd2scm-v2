@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IBM Bob FAQ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="site-header__inner">
+        <a href="https://www.ibm.com/products/bob" target="_blank" rel="noopener noreferrer" class="site-header__logo-link" aria-label="IBM Bob 製品ページ">
+          <img src="bob.svg" alt="IBM Bob" class="site-header__logo" height="40">
+        </a>
+        <div class="site-header__title-area">
+          <span class="site-header__eyebrow">IBM Bob</span>
+          <h1 class="site-header__title">よくある質問（FAQ）</h1>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="テーマを切り替える">🌙 ダーク</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="container">
+
+      <div class="search-section">
+        <label for="search-input" class="search-label">キーワードで検索</label>
+        <div class="search-input-wrapper">
+          <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+            <path d="M29,27.586l-7.552-7.552a11.018,11.018,0,1,0-1.414,1.414L27.586,29ZM4,13a9,9,0,1,1,9,9A9.01,9.01,0,0,1,4,13Z"/>
+          </svg>
+          <input
+            type="search"
+            id="search-input"
+            class="search-input"
+            placeholder="質問や回答のキーワードを入力..."
+            autocomplete="off"
+          >
+        </div>
+      </div>
+
+      <div class="filter-section">
+        <span class="filter-label">カテゴリ</span>
+        <div class="filter-buttons" role="group" aria-label="カテゴリフィルタ">
+          <button class="filter-btn filter-btn--active" data-category="all">すべて</button>
+          <button class="filter-btn" data-category="general">基本情報</button>
+          <button class="filter-btn" data-category="usage">使い方</button>
+          <button class="filter-btn" data-category="advanced">高度な機能</button>
+          <button class="filter-btn" data-category="troubleshooting">トラブルシューティング</button>
+        </div>
+      </div>
+
+      <section class="faq-section" aria-label="FAQ一覧">
+
+        <!-- 基本情報 -->
+        <div class="faq-item" data-category="general">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-1">
+            <span class="faq-category-tag">基本情報</span>
+            <span class="faq-question-text">Bob とは何ですか？</span>
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+              <path d="M16,22L6,12l1.414-1.414L16,19.172l8.586-8.586L26,12Z"/>
+            </svg>
+          </button>
+          <div class="faq-answer" id="faq-answer-1" hidden>
+            <p>Bob はコードの作成、既存コードのリファクタリング、さまざまなタスクの実行をサポートするAI搭載のコーディングアシスタントです。カスタムモードや指示を追加することで機能を拡張できます。</p>
+          </div>
+        </div>
+
+        <div class="faq-item" data-category="general">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-2">
+            <span class="faq-category-tag">基本情報</span>
+            <span class="faq-question-text">Bob はどのように動作しますか？</span>
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+              <path d="M16,22L6,12l1.414-1.414L16,19.172l8.586-8.586L26,12Z"/>
+            </svg>
+          </button>
+          <div class="faq-answer" id="faq-answer-2" hidden>
+            <p>Bob は大規模言語モデル（LLM）を使用してリクエストを理解し、アクションに変換します。主な機能は以下のとおりです：</p>
+            <ul>
+              <li>プロジェクト内のファイルの読み書き</li>
+              <li>ターミナルでのコマンド実行</li>
+              <li>インターネットの閲覧（有効な場合）</li>
+              <li>Model Context Protocol（MCP）を通じた外部ツールの利用</li>
+            </ul>
+            <p>チャットインターフェースを通じて指示を入力し、Bobが提案したアクションを確認・承認することで操作します。</p>
+          </div>
+        </div>
+
+        <div class="faq-item" data-category="general">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-3">
+            <span class="faq-category-tag">基本情報</span>
+            <span class="faq-question-text">Bob は何ができますか？</span>
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+              <path d="M16,22L6,12l1.414-1.414L16,19.172l8.586-8.586L26,12Z"/>
+            </svg>
+          </button>
+          <div class="faq-answer" id="faq-answer-3" hidden>
+            <p>Bob はさまざまなコーディングタスクをサポートします：</p>
+            <ul>
+              <li>自然言語からのコード生成</li>
+              <li>既存コードのリファクタリング</li>
+              <li>バグの修正</li>
+              <li>ドキュメントの作成</li>
+              <li>コードの解説</li>
+              <li>コードベースに関する質問への回答</li>
+              <li>反復作業の自動化</li>
+              <li>新規ファイル・プロジェクトの作成</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="faq-item" data-category="general">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-4">
+            <span class="faq-category-tag">基本情報</span>
+            <span class="faq-question-text">Bob で処理できないデータの種類はありますか？</span>
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+              <path d="M16,22L6,12l1.414-1.414L16,19.172l8.586-8.586L26,12Z"/>
+            </svg>
+          </button>
+          <div class="faq-answer" id="faq-answer-4" hidden>
+            <p>以下のデータは Bob で処理しないでください：</p>
+            <ul>
+              <li>SPI（機密個人情報）</li>
+              <li>PHI（個人医療情報）</li>
+              <li>輸出規制対象データ（ITAR、APPなど）</li>
+              <li>規制対象の金融データ（銀行口座番号、PAN、非公開の財務データなど）</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="faq-item" data-category="general">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-5">
+            <span class="faq-category-tag">基本情報</span>
+            <span class="faq-question-text">Bob を使用するリスクは何ですか？</span>
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+              <path d="M16,22L6,12l1.414-1.414L16,19.172l8.586-8.586L26,12Z"/>
+            </svg>
+          </button>
+          <div class="faq-answer" id="faq-answer-5" hidden>
+            <p>Bob は強力なツールです。責任ある使い方を心がけてください：</p>
+            <ul>
+              <li><strong>Bob は間違いを犯す可能性があります。</strong>承認前に変更内容を必ず確認してください。</li>
+              <li><strong>Bob はコマンドを実行できます。</strong>自動承認を使用している場合は特に注意が必要です。</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 使い方 -->
+        <div class="faq-item" data-category="usage">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-6">
+            <span class="faq-category-tag">使い方</span>
+            <span class="faq-question-text">新しいタスクを始めるにはどうすればいいですか？</span>
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+              <path d="M16,22L6,12l1.414-1.414L16,19.172l8.586-8.586L26,12Z"/>
+            </svg>
+          </button>
+          <div class="faq-answer" id="faq-answer-6" hidden>
+            <p>Bob パネルを開き、チャット入力欄にタスクを入力します。何をしてほしいかを明確かつ具体的に記述してください。</p>
+          </div>
+        </div>
+
+        <div class="faq-item" data-category="usage">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-7">
+            <span class="faq-category-tag">使い方</span>
+            <span class="faq-question-text">モードを切り替えるにはどうすればいいですか？</span>
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+              <path d="M16,22L6,12l1.414-1.414L16,19.172l8.586-8.586L26,12Z"/>
+            </svg>
+          </button>
+          <div class="faq-answer" id="faq-answer-7" hidden>
+            <p>チャット入力エリアのドロップダウンメニューから別のモードを選択するか、<code>/</code> コマンドを使用して特定のモードに切り替えてください。</p>
+          </div>
+        </div>
+
+        <div class="faq-item" data-category="usage">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-8">
+            <span class="faq-category-tag">使い方</span>
+            <span class="faq-question-text">ツールとは何ですか？どのように使いますか？</span>
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+              <path d="M16,22L6,12l1.414-1.414L16,19.172l8.586-8.586L26,12Z"/>
+            </svg>
+          </button>
+          <div class="faq-answer" id="faq-answer-8" hidden>
+            <p>ツールは Bob がシステムと対話する手段です。Bob はタスクを完了するために適切なツールを自動的に選択して使用します。ツールを直接呼び出す必要はありません。各ツールの使用時に承認または拒否を求められます。</p>
+          </div>
+        </div>
+
+        <div class="faq-item" data-category="usage">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-9">
+            <span class="faq-category-tag">使い方</span>
+            <span class="faq-question-text">コンテキストメンションとは何ですか？</span>
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+              <path d="M16,22L6,12l1.414-1.414L16,19.172l8.586-8.586L26,12Z"/>
+            </svg>
+          </button>
+          <div class="faq-answer" id="faq-answer-9" hidden>
+            <p>コンテキストメンションは、ファイル、フォルダ、問題などのプロジェクト固有の情報を Bob に提供する方法です。<code>@</code> 記号の後にメンションしたいアイテムを入力します（例：<code>@/src/file.ts</code>、<code>@problems</code>）。</p>
+          </div>
+        </div>
+
+        <div class="faq-item" data-category="usage">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-10">
+            <span class="faq-category-tag">使い方</span>
+            <span class="faq-question-text">Bob はターミナルでコマンドを実行できますか？</span>
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+              <path d="M16,22L6,12l1.414-1.414L16,19.172l8.586-8.586L26,12Z"/>
+            </svg>
+          </button>
+          <div class="faq-answer" id="faq-answer-10" hidden>
+            <p>はい、Bob はコマンドを実行できます。コマンドの自動承認を有効にしていない限り、各コマンドの実行前に承認を求められます。コマンドの自動承認の使用には十分ご注意ください。</p>
+          </div>
+        </div>
+
+        <div class="faq-item" data-category="usage">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-11">
+            <span class="faq-category-tag">使い方</span>
+            <span class="faq-question-text">Bob へフィードバックするにはどうすればいいですか？</span>
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+              <path d="M16,22L6,12l1.414-1.414L16,19.172l8.586-8.586L26,12Z"/>
+            </svg>
+          </button>
+          <div class="faq-answer" id="faq-answer-11" hidden>
+            <p>Bob が提案したアクションを承認または拒否することでフィードバックできます。フィードバックフィールドを使用して追加のコメントを入力することもできます。</p>
+          </div>
+        </div>
+
+        <div class="faq-item" data-category="usage">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-12">
+            <span class="faq-category-tag">使い方</span>
+            <span class="faq-question-text">Bob の動作をカスタマイズできますか？</span>
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+              <path d="M16,22L6,12l1.414-1.414L16,19.172l8.586-8.586L26,12Z"/>
+            </svg>
+          </button>
+          <div class="faq-answer" id="faq-answer-12" hidden>
+            <p>はい、いくつかの方法でカスタマイズできます：</p>
+            <ul>
+              <li><strong>カスタム指示：</strong>すべてのモードに共通の指示や、モード固有の指示を設定できます。</li>
+              <li><strong>カスタムモード：</strong>カスタマイズされたプロンプトとツール権限を持つ独自のモードを作成できます。</li>
+              <li><strong>Bobルール：</strong>プロジェクトのルートにある <code>.bob/rules/</code> フォルダにマークダウンのルールファイルを作成して追加ガイドラインを設定できます。</li>
+              <li><strong>設定：</strong>自動承認、差分編集などの各種設定を調整できます。</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="faq-item" data-category="usage">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-13">
+            <span class="faq-category-tag">使い方</span>
+            <span class="faq-question-text">Bob に自動承認の設定はありますか？</span>
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+              <path d="M16,22L6,12l1.414-1.414L16,19.172l8.586-8.586L26,12Z"/>
+            </svg>
+          </button>
+          <div class="faq-answer" id="faq-answer-13" hidden>
+            <p>はい、Bob には有効にすることでアクションを自動的に承認するいくつかの設定があります。</p>
+          </div>
+        </div>
+
+        <!-- 高度な機能 -->
+        <div class="faq-item" data-category="advanced">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-14">
+            <span class="faq-category-tag">高度な機能</span>
+            <span class="faq-question-text">MCP（Model Context Protocol）とは何ですか？</span>
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+              <path d="M16,22L6,12l1.414-1.414L16,19.172l8.586-8.586L26,12Z"/>
+            </svg>
+          </button>
+          <div class="faq-answer" id="faq-answer-14" hidden>
+            <p>MCP は Bob が外部サーバーと通信するためのプロトコルです。カスタムツールやリソースを追加することで Bob の機能を拡張できます。</p>
+          </div>
+        </div>
+
+        <div class="faq-item" data-category="advanced">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-15">
+            <span class="faq-category-tag">高度な機能</span>
+            <span class="faq-question-text">独自の MCP サーバーを作成できますか？</span>
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+              <path d="M16,22L6,12l1.414-1.414L16,19.172l8.586-8.586L26,12Z"/>
+            </svg>
+          </button>
+          <div class="faq-answer" id="faq-answer-15" hidden>
+            <p>はい、独自の MCP サーバーを作成して Bob にカスタム機能を追加できます。</p>
+          </div>
+        </div>
+
+        <!-- トラブルシューティング -->
+        <div class="faq-item" data-category="troubleshooting">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-16">
+            <span class="faq-category-tag">トラブルシューティング</span>
+            <span class="faq-question-text">Bob が応答しません。どうすればいいですか？</span>
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+              <path d="M16,22L6,12l1.414-1.414L16,19.172l8.586-8.586L26,12Z"/>
+            </svg>
+          </button>
+          <div class="faq-answer" id="faq-answer-16" hidden>
+            <p>以下を確認してください：</p>
+            <ul>
+              <li>APIキーが正しく、期限切れになっていないか確認する</li>
+              <li>インターネット接続を確認する</li>
+              <li>VS Code を再起動する</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="faq-item" data-category="troubleshooting">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-17">
+            <span class="faq-category-tag">トラブルシューティング</span>
+            <span class="faq-question-text">Bob が意図しない変更を加えました。元に戻すにはどうすればいいですか？</span>
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+              <path d="M16,22L6,12l1.414-1.414L16,19.172l8.586-8.586L26,12Z"/>
+            </svg>
+          </button>
+          <div class="faq-answer" id="faq-answer-17" hidden>
+            <p>Bob は VS Code の標準ファイル編集機能を使用しています。標準の「元に戻す」コマンド（Ctrl/Cmd + Z）で変更を取り消すことができます。また、チェックポイント機能を使用してファイルへの変更を以前の状態に戻すこともできます。</p>
+          </div>
+        </div>
+
+      </section>
+
+      <div class="faq-empty" id="faq-empty" hidden>
+        <p>該当する質問が見つかりませんでした。</p>
+        <p class="faq-empty__sub">別のキーワードやカテゴリをお試しください。</p>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; IBM Bob FAQ</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
